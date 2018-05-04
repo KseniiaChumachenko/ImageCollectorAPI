@@ -124,6 +124,34 @@ router.get('/:postId', (req, res, next) => {
     });
 });
 
+router.get('/cat/:catId', (req, res, next) => {
+    ImagePost.find()
+    .select('_id image category')
+    .populate('category')
+    .exec()
+    .then(docs => { 
+        console.log(docs); 
+            const response = {
+                imagePosts: docs.map( doc => {
+                    if (doc.category._id == req.params.catId) { 
+                    return {
+                        _id: doc._id,
+                        image: doc.image,
+                        category: doc.category._id
+                    }
+                }
+                })
+            };
+            res.status(200).json(response); 
+     })
+    .catch(err => {
+        console.log(err); 
+        res.status(500).json({
+            error: err
+        });
+    }); 
+});
+
 router.delete('/:postId', (req, res, next) => {
     ImagePost.remove({_id: req.params.postId})
     .exec()
