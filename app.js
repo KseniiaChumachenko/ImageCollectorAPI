@@ -7,8 +7,6 @@ const bodyParser = require('body-parser');
 //remenber to install package for database
 const mongoose = require('mongoose');
 
-const productRoutes = require('./api/routes/products');
-const ordersRoutes = require('./api/routes/orders');
 const categoriesRoutes = require('./api/routes/categories');
 const imagePostsRoutes = require('./api/routes/imagePosts');
 
@@ -32,8 +30,6 @@ app.use((req, res, next) => {
     next();
  });
 
-app.use('/products', productRoutes);
-app.use('/orders', ordersRoutes);
 app.use('/categories', categoriesRoutes);
 app.use('/imagePosts', imagePostsRoutes);
 
