@@ -1,6 +1,6 @@
 # ImageCollectorRest
 Node.js API for IOS application (https://github.com/timeofneon/Image-Collector)
-<br> ENDPOIND: https://imagecollector.herokuapp.com
+<br> ENDPOINT: https://imagecollector.herokuapp.com
 As API deployed to Heroku image uploading temporarily unavailable.
 #
 
