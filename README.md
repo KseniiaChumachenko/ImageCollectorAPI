@@ -1,12 +1,33 @@
 # ImageCollectorRest
 Node.js API for IOS application (https://github.com/timeofneon/Image-Collector)
-Base URL: https://imagecollector.herokuapp.com
+ENDPOIND: https://imagecollector.herokuapp.com
 As API deployed to Heroku image uploading temporarily unavailable.
 #
-<h1>Categories</h1> `/categories`
-<h2 style='color:green'>GET</h2>
-<h3>Response body example:</h3>
-```
+
+* [Categories] (#cat)
+  * [GET] (#catget)
+  * [POST] (#catpost)
+* [Individual category] (#indcat)
+  * [GET] (#indcatget)
+  * [DELETE] (#indcatdelete)
+* [Posts] (#posts)
+   * [GET] (#postsget)
+   * [POST] (#postspost)
+* [Posts by category] (#postscat)
+   * [GET] (#postscatget)
+* [Individual post] (#post)
+   * [GET] (#postget)
+   * [DELETE] (#postdelete)
+
+## <a name="cat"></a> Categories
+
+`/categories`
+
+# <a name="catget"></a> GET
+
+Response body example:
+
+```json
 {
     "count": 2,
     "categories": [
@@ -21,19 +42,26 @@ As API deployed to Heroku image uploading temporarily unavailable.
     ]
 }
 ```
-<h2 style='color:blue'>POST</h2>
-<h3>Request body: raw(JSON)</h3>
-| key  |  Value  |        Description         |
-| ---- | ------- | -------------------------- |
-| name | String  | input name of new category |
+
+# <a name="catpost"></a> POST
+
+Request body: raw(JSON)
+
+| key  |  Value  | Description |
+| ---- | ------- | ----------- |
+| name | String  | input name of new category /
+
 Example of request:
-```
+
+```json
 {
 "name": "Rotterdam"
 }
 ```
-<h3>Response body example:</h3>
-```
+
+Response body example:
+
+```json
 {
     "message": "Create category seccessfully",
     "createdCategory": {
@@ -42,11 +70,18 @@ Example of request:
     }
 }
 ```
+
 Note: No headers in request
-<h1>Individual categories</h1> `/categories/:categoryId`
-<h2 style='color:green'>GET</h2>
-<h3>Response body example:</h3>
-```
+
+## <a name="indcat"></a> Individual category
+
+`/categories/:categoryId`
+
+# <a name="indcatget"></a> GET
+
+Response body example:
+
+```json
 {
     "category": {
         "_id": "5ae63a7dec922ec34835dce9",
@@ -54,17 +89,26 @@ Note: No headers in request
     }
 }
 ```
-<h2 style='color:red'>DELETE</h2>
-<h3>Response body example:</h3>
-```
+
+# <a name="indcatdelete"></a> DELETE
+
+Response body example:
+
+```json
 {
     "message": "Category deleted"
 }
 ```
-<h1>Posts</h1> `/imagePosts`
-<h2 style='color:green'>GET</h2>
-<h3>Response body example:</h3>
-```
+
+## <a name="posts"></a> Posts
+
+`/imagePosts`
+
+# <a name="postsget"></a> GET
+
+Response body example:
+
+```json
 {
     "count": 2,
     "imagePosts": [
@@ -81,14 +125,19 @@ Note: No headers in request
     ]
 }
 ```
-<h2 style='color:blue'>POST</h2>
-<h3>Request body: form-data </h3>
+
+# <a name="postspost"></a> POST
+
+Request body: form-data 
+
 |    key   |  Value  |        Description        |
 | -------- | ------- | ------------------------- |
 | category | String  |        category iD        |
 |  image   |  file   | file attached to the post |
-<h3>Response body example:</h3>
-```
+
+Response body example:
+
+```json
 {
     "message": "ImagePost stored",
     "createdPost": {
@@ -98,12 +147,20 @@ Note: No headers in request
     }
 }
 ```
+
 Note: No headers in request
-<h1>Posts by category</h1> `/imagePosts/cat/:catId`
-<h2 style='color:green'>GET</h2>
+
+## <a name="postscat"></a> Posts by category
+
+`/imagePosts/cat/:catId`
+
+# <a name="postscatget"></a> GET
+
 Note: post by category(work with error)
-<h3>Response body example:</h3>
-```
+
+Response body example:
+
+```json
 {
     "imagePosts": [
         {
@@ -119,19 +176,28 @@ Note: post by category(work with error)
     ]
 }
 ```
-<h1>Individual post</h1> `/imagePosts/:postId`
-<h2 style='color:green'>GET</h2>
-<h3>Response body example:</h3>
-```
+
+## <a name="post"></a> Individual post
+
+`/imagePosts/:postId`
+
+# <a name="postget"></a> GET
+
+Response body example:
+
+```json
 {
     "_id": "5af1f902b2c16f00207cee0e",
     "image": "uploads/2018-05-08T19:22:42.030ZAmsterdam.jpg",
     "category": "5ae63a5cec922ec34835dce7"
 }
 ```
-<h2 style='color:red'>DELETE</h2>
-<h3>Response body example:</h3>
-```
+
+# <a name="postdelete"></a> DELETE
+
+Response body example:
+
+```json
 resp:
 {
     "message": "ImagePost  deleted"
