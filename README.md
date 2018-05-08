@@ -8,7 +8,7 @@ As API deployed to Heroku image uploading temporarily unavailable.
    * [GET](#catget)
    * [POST](#catpost)
 * [Individual category](#indcat)
-   * [GET](#indcatget)
+   * [GET](#indcatget)
    * [DELETE](#indcatdelete)
 * [Posts](#posts)
    * [GET](#postsget)
@@ -23,7 +23,7 @@ As API deployed to Heroku image uploading temporarily unavailable.
 
 `/categories`
 
-## <a name="catget"></a> ![#f03c15]GET(https://placehold.it/15/f03c15/000000?text=+) GET
+### <a name="catget"></a> GET
 
 Response body example:
 
@@ -43,7 +43,7 @@ Response body example:
 }
 ```
 
-## <a name="catpost"></a> POST
+### <a name="catpost"></a> POST
 
 Request body: raw(JSON)
 
@@ -77,7 +77,7 @@ Note: No headers in request
 
 `/categories/:categoryId`
 
-## <a name="indcatget"></a> GET
+### <a name="indcatget"></a> GET
 
 Response body example:
 
@@ -90,7 +90,7 @@ Response body example:
 }
 ```
 
-## <a name="indcatdelete"></a> DELETE
+### <a name="indcatdelete"></a> DELETE
 
 Response body example:
 
@@ -104,7 +104,7 @@ Response body example:
 
 `/imagePosts`
 
-## <a name="postsget"></a> GET
+### <a name="postsget"></a> GET
 
 Response body example:
 
@@ -126,7 +126,7 @@ Response body example:
 }
 ```
 
-## <a name="postspost"></a> POST
+### <a name="postspost"></a> POST
 
 Request body: form-data 
 
@@ -154,7 +154,7 @@ Note: No headers in request
 
 `/imagePosts/cat/:catId`
 
-## <a name="postscatget"></a> GET
+### <a name="postscatget"></a> GET
 
 Note: post by category(work with error)
 
@@ -181,7 +181,7 @@ Response body example:
 
 `/imagePosts/:postId`
 
-## <a name="postget"></a> GET
+### <a name="postget"></a> GET
 
 Response body example:
 
@@ -193,7 +193,7 @@ Response body example:
 }
 ```
 
-## <a name="postdelete"></a> DELETE
+### <a name="postdelete"></a> DELETE
 
 Response body example:
 
