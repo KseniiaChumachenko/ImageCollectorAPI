@@ -139,13 +139,6 @@ router.get('/cat/:catId', (req, res, next) => {
                         image: doc.image,
                         category: doc.category._id
                     }
-                } else {
-                    //wrong, return all pictures in DB  
-                    return {
-                        _id: doc._id,
-                        image: doc.image,
-                        category: doc.category._id
-                    }
                 }
                 })
             };
