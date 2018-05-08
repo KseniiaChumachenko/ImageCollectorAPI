@@ -4,26 +4,26 @@ ENDPOIND: https://imagecollector.herokuapp.com
 As API deployed to Heroku image uploading temporarily unavailable.
 #
 
-* [Categories] (#cat)
-  * [GET] (#catget)
-  * [POST] (#catpost)
-* [Individual category] (#indcat)
-  * [GET] (#indcatget)
-  * [DELETE] (#indcatdelete)
-* [Posts] (#posts)
-   * [GET] (#postsget)
-   * [POST] (#postspost)
-* [Posts by category] (#postscat)
-   * [GET] (#postscatget)
-* [Individual post] (#post)
-   * [GET] (#postget)
-   * [DELETE] (#postdelete)
+* [Categories](#cat)
+   * [GET](#catget)
+   * [POST](#catpost)
+* [Individual category](#indcat)
+   * [GET](#indcatget)
+   * [DELETE](#indcatdelete)
+* [Posts](#posts)
+   * [GET](#postsget)
+   * [POST](#postspost)
+* [Posts by category](#postscat)
+   * [GET](#postscatget)
+* [Individual post](#post)
+   * [GET](#postget)
+   * [DELETE](#postdelete)
 
-## <a name="cat"></a> Categories
+# <a name="cat"></a> Categories
 
 `/categories`
 
-# <a name="catget"></a> GET
+## <a name="catget"></a> ![#f03c15]GET(https://placehold.it/15/f03c15/000000?text=+) GET
 
 Response body example:
 
@@ -43,7 +43,7 @@ Response body example:
 }
 ```
 
-# <a name="catpost"></a> POST
+## <a name="catpost"></a> POST
 
 Request body: raw(JSON)
 
@@ -73,11 +73,11 @@ Response body example:
 
 Note: No headers in request
 
-## <a name="indcat"></a> Individual category
+# <a name="indcat"></a> Individual category
 
 `/categories/:categoryId`
 
-# <a name="indcatget"></a> GET
+## <a name="indcatget"></a> GET
 
 Response body example:
 
@@ -90,7 +90,7 @@ Response body example:
 }
 ```
 
-# <a name="indcatdelete"></a> DELETE
+## <a name="indcatdelete"></a> DELETE
 
 Response body example:
 
@@ -100,11 +100,11 @@ Response body example:
 }
 ```
 
-## <a name="posts"></a> Posts
+# <a name="posts"></a> Posts
 
 `/imagePosts`
 
-# <a name="postsget"></a> GET
+## <a name="postsget"></a> GET
 
 Response body example:
 
@@ -126,7 +126,7 @@ Response body example:
 }
 ```
 
-# <a name="postspost"></a> POST
+## <a name="postspost"></a> POST
 
 Request body: form-data 
 
@@ -150,11 +150,11 @@ Response body example:
 
 Note: No headers in request
 
-## <a name="postscat"></a> Posts by category
+# <a name="postscat"></a> Posts by category
 
 `/imagePosts/cat/:catId`
 
-# <a name="postscatget"></a> GET
+## <a name="postscatget"></a> GET
 
 Note: post by category(work with error)
 
@@ -177,11 +177,11 @@ Response body example:
 }
 ```
 
-## <a name="post"></a> Individual post
+# <a name="post"></a> Individual post
 
 `/imagePosts/:postId`
 
-# <a name="postget"></a> GET
+## <a name="postget"></a> GET
 
 Response body example:
 
@@ -193,7 +193,7 @@ Response body example:
 }
 ```
 
-# <a name="postdelete"></a> DELETE
+## <a name="postdelete"></a> DELETE
 
 Response body example:
 
