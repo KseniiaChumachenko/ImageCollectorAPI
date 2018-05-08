@@ -69,8 +69,8 @@ router.get('/:categoryId', (req, res, next) => {
     });
 });
 
-router.delete('/:categoryName', (req, res, next) => {
-    Category.remove({_id: req.params.categoryName})
+router.delete('/:categoryId', (req, res, next) => {
+    Category.remove({_id: req.params.categoryId})
     .exec()
     .then(result => {
         res.status(200).json({
